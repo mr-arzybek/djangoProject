@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Detail</title>
+</head>
+<body>
+<center>
+    <button><a href="/car_list/">На список автомобилей</a></button>
+    <h1><b>{{car_detail.title}}</b></h1>
+    <p><b><i>{{car_detail.description}}</i></b></p>
+    <img src="{{car_detail.image.url}}" alt="" width="600" height="auto">
+    <p><b>Целевая аудитория: {{car_detail.car_type}}</b></p>
+    <p>{{car_detail.created_date}}</p>
+    <p><b>Цена: {{car_detail.cost}}</b> сом</p>
+    <p><b>{{car_detail.specifications}}</b></p>
+    <p><b>Модельный год: {{car_detail.model_year}}</b></p>
+    <p><b>Страна изготовитель: {{car_detail.manufacturing_country}}</b></p>
+    <iframe src="{{car_detail.video}}" frameborder="0" width="640" height="420"></iframe>
+</center>
+</body>
+</html>

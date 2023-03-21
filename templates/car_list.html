@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+<body>
+<div>
+    <ul>
+        {% for i in car_object %}
+
+        <li>
+            <h2><b><i>{{i.title}}</i></b></h2>
+            <img src="{{i.image.url}}" alt="" width="600" height="auto">
+            <p><b>Цена: {{i.cost}} сом</b></p>
+            <button><a href="/car_list/{{i.id}}">Подробнее</a></button>
+        </li>
+
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
