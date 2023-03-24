@@ -1,22 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Car Detail</title>
+    <link rel="stylesheet" href="{% static 'css/detail_css.css' %}">
 </head>
 <body>
+{% include 'header.html' %}
+<button type="button" class="btn btn-outline-light">
+    <a href="/car_list/" style="text-decoration: none; color: black">На список автомобилей</a></button>
+<div class="container">
+    <div class="post">
+        <div class="post-image">
+            <img src="{{car_detail.image.url}}">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <h1>{{car_detail.title}}</h1>
+                <div class="post-meta">
+                    <time class="cost">{{car_detail.cost}} сом</time>
+                    <span class="type">{{car_detail.car_type}}</span>
+                    <span class="create_date">{{car_detail.created_date}}</span>
+                    <p><b>{{car_detail.specifications}}</b></p>
+                    <p><b>Модельный год: {{car_detail.model_year}}</b></p>
+                    <p><b>Страна изготовитель: {{car_detail.manufacturing_country}}</b></p>
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+            <p>{{car_detail.description}}
+            </p>
+        </div>
+    </div>
+</div>
 <center>
-    <button><a href="/car_list/">На список автомобилей</a></button>
-    <h1><b>{{car_detail.title}}</b></h1>
-    <p><b><i>{{car_detail.description}}</i></b></p>
-    <img src="{{car_detail.image.url}}" alt="" width="600" height="auto">
-    <p><b>Целевая аудитория: {{car_detail.car_type}}</b></p>
-    <p>{{car_detail.created_date}}</p>
-    <p><b>Цена: {{car_detail.cost}}</b> сом</p>
-    <p><b>{{car_detail.specifications}}</b></p>
-    <p><b>Модельный год: {{car_detail.model_year}}</b></p>
-    <p><b>Страна изготовитель: {{car_detail.manufacturing_country}}</b></p>
-    <iframe src="{{car_detail.video}}" frameborder="0" width="640" height="420"></iframe>
+<table border="5">
+    <tr>
+        <td><iframe src="{{car_detail.video}}" frameborder="0" width="640" height="420"></iframe></td>
+    </tr>
+</table>
 </center>
+
+{% include 'footer.html' %}
 </body>
 </html>
