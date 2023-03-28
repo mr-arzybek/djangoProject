@@ -20,6 +20,7 @@ class CarShop(models.Model):
     specifications = models.TextField("Характеристики", null=True)
     model_year = models.TextField("Модельный год", null=True)
     manufacturing_country = models.TextField("Страна изготовитель", null=True)
+    reviews = models.TextField('Отзывы', blank=True, null=True)
 
     def __str__(self):
         return self.title

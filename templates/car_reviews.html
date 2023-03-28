@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Car</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+<form class="air" method="post" enctype="multipart/form-data">
+<div class="form-inner">
+<div class="stripes-block"></div>
+<h3>Оставить отзыв</h3>
+{% csrf_token %}
+  {{form.reviews}}
+<input type="submit" value="Добавить отзыв">
+</div>
+</form>
+
+</body>
+</html>
